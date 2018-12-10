@@ -57,8 +57,9 @@ $('#toggle').on('click', function() {
 		$('#start').removeClass('hide');
         isVisible = 0;
     } else {
-		$('body').css('background', "url('img/pattern2.png') !important");
-		$('body').css('background-size', "100% !important");
+		/*$('body').css('background', "url('img/pattern2.png') !important");
+		$('body').css('background-size', "100% !important")*/;
+		$('body').addClass('body');
 		$('#load').removeClass('hide');
 		$('#start').addClass('hide');
 		setTimeout(function () {
