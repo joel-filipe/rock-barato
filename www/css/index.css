@@ -225,3 +225,11 @@ h1 {
 .btn-outline-fb:focus {
     box-shadow: unset;
 }
+
+.btn-outline-info span, .btn-outline-info i{
+	transition: color .15s ease-in-out;
+}
+
+.btn-outline-info:hover span, .btn-outline-info:hover i{
+	color: white !important;
+}

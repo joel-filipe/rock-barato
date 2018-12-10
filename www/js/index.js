@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
-    // Update DOM on a Received Event
+	// Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -50,23 +50,40 @@ var app = {
 
 var isVisible = 0; // if element initially hidden, zero (0) else one (1)
 $('#toggle').on('click', function() {
-    //console.log("isVisibleisVisible");
     if (isVisible) {
         $('#togglePane').addClass('hide');
         $('#load').addClass('hide');
+		$('#offline').addClass('hide');
 		$('#start').removeClass('hide');
         isVisible = 0;
     } else {
-		
 		$('body').css('background', "url('img/pattern2.png') !important");
 		$('body').css('background-size', "100% !important");
 		$('#load').removeClass('hide');
+		$('#start').addClass('hide');
 		setTimeout(function () {
 			$('#load').addClass('hide');
-			$('#togglePane').removeClass('hide');
-		}, 30000);
-		
-		$('#start').addClass('hide');
+			if(typeof jQuery != 'undefined'){
+				$('#togglePane').removeClass('hide');
+			}else{
+				$('#offline').removeClass('hide');
+				$('#togglePane').addClass('hide');
+			}
+		}, 20000);
         isVisible = 1;
     }
+});
+
+$('#voltar_tentar').on('click', function() {
+	$('#load').removeClass('hide');
+	$('#offline').addClass('hide');
+	setTimeout(function () {
+		$('#load').addClass('hide');
+		if(typeof jQuery != 'undefined'){
+			$('#togglePane').removeClass('hide');
+		}else{
+			$('#offline').removeClass('hide');
+			$('#togglePane').addClass('hide');
+		}
+	}, 20000);
 });
