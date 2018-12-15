@@ -80,11 +80,12 @@ $('#voltar_tentar').on('click', function() {
 	$('#offline').addClass('hide');
 	setTimeout(function () {
 		$('#load').addClass('hide');
-		if(typeof jQuery != 'undefined'){
+		/*if(typeof jQuery != 'undefined'){
 			$('#togglePane').removeClass('hide');
 		}else{
 			$('#offline').removeClass('hide');
 			$('#togglePane').addClass('hide');
-		}
+        }*/
+        window.location='./main.html';
 	}, 20000);
 });
